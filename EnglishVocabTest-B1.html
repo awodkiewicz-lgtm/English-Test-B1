@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CEFR B1 English Vocabulary Test</title>
+    <!-- Import Poppins font to match admcompanywll.com -->
+    <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* --- Style Customization for admcompanywll.com --- */
+        :root {
+            --primary-blue: #0a2147;
+            --accent-gold: #fbb040;
+            --light-gray: #f4f7f9;
+            --dark-text: #333;
+            --light-text: #ffffff;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--light-gray);
+            color: var(--dark-text);
+            line-height: 1.6;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+        }
+        #main-container {
+            background-color: var(--light-text);
+            padding: 30px 45px;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            max-width: 800px;
+            width: 100%;
+        }
+        h1, h2 {
+            text-align: center;
+            color: var(--primary-blue);
+            font-weight: 700;
+        }
+        h1 {
+            margin-bottom: 10px;
+        }
+        h2 {
+            margin-bottom: 25px;
+        }
+        #email-container, #results-container {
+            text-align: center;
+        }
+        #email-input {
+            width: calc(80% - 24px);
+            padding: 12px;
+            margin-top: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 16px;
+        }
+        .question-block {
+            margin-bottom: 30px;
+            border-left: 4px solid #e0e0e0;
+            padding-left: 20px;
+            transition: border-color 0.4s;
+        }
+        .question-text {
+            font-weight: 600;
+            font-size: 1.1em;
+            margin-bottom: 15px;
+            color: #222;
+        }
+        .options-list {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+        .options-list li {
+            margin-bottom: 10px;
+        }
+        .option-label {
+            display: block;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s, border-color 0.3s;
+        }
+        .option-label:hover {
+            background-color: #fdf5e6; /* A very light gold for hover */
+        }
+        input[type="radio"] {
+            display: none;
+        }
+        input[type="radio"]:checked + .option-label {
+            background-color: #fff9eb;
+            border-color: var(--accent-gold);
+        }
+        .btn {
+            display: block;
+            width: 220px;
+            padding: 12px 20px;
+            margin: 30px auto 0;
+            background-color: var(--accent-gold);
+            color: var(--primary-blue);
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: 700;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+        .btn:hover {
+            background-color: #fcc269; /* Slightly lighter gold on hover */
+            transform: translateY(-2px);
+        }
+        #results-container {
+            display: none;
+        }
+        .result-score {
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--primary-blue);
+        }
+        .feedback-section {
+            text-align: left;
+            margin-top: 30px;
+            border-top: 1px solid #eee;
+            padding-top: 20px;
+        }
+        .feedback-section h3 {
+            color: var(--primary-blue);
+            font-weight: 600;
+            border-bottom: 2px solid var(--accent-gold);
+            padding-bottom: 5px;
+            display: inline-block;
+        }
+        .feedback-list {
+            list-style-type: '✓';
+            padding-left: 20px;
+        }
+        .feedback-list li {
+            padding-left: 15px;
+            margin-bottom: 12px;
+        }
+        .question-block.correct { border-left-color: #28a745; }
+        .question-block.incorrect { border-left-color: #dc3545; }
+        .option-label.correct-answer {
+            background-color: #d4edda;
+            border-color: #28a745;
+            font-weight: 600;
+        }
+        .option-label.wrong-answer {
+            background-color: #f8d7da;
+            border-color: #dc3545;
+            text-decoration: line-through;
+        }
+    </style> -->
+
+<style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #f4f7f9;
+            color: #333;
+            line-height: 1.6;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+        }
+        #main-container {
+            background-color: #fff;
+            padding: 25px 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            max-width: 800px;
+            width: 100%;
+        }
+        h1, h2 {
+            text-align: center;
+            color: #0056b3;
+        }
+        #email-container, #results-container {
+            text-align: center;
+        }
+        #email-input {
+            width: 80%;
+            padding: 10px;
+            margin-top: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .question-block {
+            margin-bottom: 25px;
+            border-left: 3px solid #e0e0e0;
+            padding-left: 15px;
+        }
+        .question-text {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .options-list {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+        .options-list li {
+            margin-bottom: 8px;
+        }
+        .option-label {
+            display: block;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s, border-color 0.3s;
+        }
+        .option-label:hover {
+            background-color: #f0f8ff;
+        }
+        input[type="radio"] {
+            display: none;
+        }
+        input[type="radio"]:checked + .option-label {
+            background-color: #dbeafe;
+            border-color: #0056b3;
+        }
+        .btn {
+            display: block;
+            width: 200px;
+            padding: 12px 20px;
+            margin: 20px auto 0;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .btn:hover {
+            background-color: #0056b3;
+        }
+        #results-container {
+            display: none;
+        }
+        .result-score {
+            font-size: 24px;
+            font-weight: bold;
+            color: #28a745;
+        }
+        .feedback-section {
+            text-align: left;
+            margin-top: 20px;
+            border-top: 1px solid #eee;
+            padding-top: 20px;
+        }
+        .feedback-section h3 {
+            color: #0056b3;
+        }
+        .feedback-list {
+            list-style-type: '👉';
+            padding-left: 20px;
+        }
+        .feedback-list li {
+            padding-left: 10px;
+            margin-bottom: 10px;
+        }
+        /* Styles for showing correct/incorrect answers after submission */
+        .question-block.correct {
+            border-left-color: #28a745;
+        }
+        .question-block.incorrect {
+            border-left-color: #dc3545;
+        }
+        .option-label.correct-answer {
+            background-color: #d4edda;
+            border-color: #28a745;
+            font-weight: bold;
+        }
+        .option-label.wrong-answer {
+            background-color: #f8d7da;
+            border-color: #dc3545;
+            text-decoration: line-through;
+        }
+    </style>
+
+
+
+
+
+
+</head>
+<body>
+
+    <div id="main-container">
+        <h1>CEFR B1 English Vocabulary Test</h1>
+        
+        <!-- Email Collection Module - deactivated and replaced by the module collecting and sending the email addresses to my email account -->
+        <!-- <div id="email-container">
+            <p style="text-align: center;">Enter your email to begin the test and receive your results.</p>
+            <input type="email" id="email-input" placeholder="your.email@example.com" required>
+            <button class="btn" onclick="startTest()">Start Test</button>
+            <p id="email-error" style="color:red; display:none; text-align:center; margin-top:10px;">Please enter a valid email address.</p>
+            <p style="font-size: 12px; color: #777; margin-top: 15px; text-align: center;">
+                <strong>Privacy Note:</strong> This test runs entirely in your browser. Your email and results are not sent to a server.
+            </p>
+        </div> -->
+
+
+
+
+
+         <!-- Email Collection Module (Modified to send emails via Formspree) -->
+<form id="email-form" action="https://formspree.io/f/mvgqyqky" method="POST">
+    <div id="email-container">
+        <p>Please enter your email address to start the test.</p>
+        
+        <!-- The 'name' attribute is required for the form to work -->
+        <input type="email" id="email-input" name="email" placeholder="your.email@example.com" required>
+        
+        <button type="submit" class="btn">Start Test</button>
+        
+        <p id="email-error" style="color:red; display:none;">Please enter a valid email address.</p>
+        
+        <!-- IMPORTANT: Updated privacy notice -->
+        <p style="font-size: 12px; color: #777; margin-top: 15px;">
+            <strong>Note:</strong> By clicking "Start Test", your email address will be collected and sent to the site administrator.
+        </p>
+    </div>
+</form>
+
+
+
+<script>
+    // Add this JavaScript to your existing <script> tag or create a new one
+
+    // Get the form element
+    const emailForm = document.getElementById('email-form');
+
+    // Add an event listener to handle the form submission
+    emailForm.addEventListener("submit", function(event) {
+        // Prevent the form from redirecting the page immediately
+        event.preventDefault();
+
+        const emailInput = document.getElementById('email-input');
+        const emailError = document.getElementById('email-error');
+
+        // Check if the email is valid before doing anything
+        if (!emailInput.value || !emailInput.checkValidity()) {
+            emailError.style.display = 'block';
+            return; // Stop the function here
+        } else {
+            emailError.style.display = 'none';
+        }
+
+        // Create a FormData object from the form
+        const formData = new FormData(emailForm);
+
+        // Use the 'fetch' API to send the data to Formspree in the background
+        fetch(emailForm.action, {
+            method: "POST",
+            body: formData,
+            headers: {
+                'Accept': 'application/json'
+            }
+        }).then(response => {
+            if (response.ok) {
+                // If Formspree received the data successfully, THEN start the test
+                console.log('Email submitted to Formspree successfully.');
+                startTheTest(); // This function will display the test questions
+            } else {
+                // If there was an error with Formspree
+                console.error('Formspree submission failed.');
+                alert('There was a problem submitting your email. Please try again.');
+            }
+        }).catch(error => {
+            // If there was a network error
+            console.error('Network error:', error);
+            alert('A network error occurred. Please check your connection and try again.');
+        });
+    });
+
+    // This function contains the logic that was originally in `startTest()`
+    function startTheTest() {
+        // Hide the email form
+        document.getElementById('email-form').style.display = 'none';
+        
+        // Show the test form (assuming your test is in an element with id 'test-form')
+        document.getElementById('test-form').style.display = 'block';
+        
+        // Load the questions if they aren't loaded already
+        // This check prevents reloading if the user tries to submit multiple times
+        if (!document.getElementById('questions-container').hasChildNodes()) {
+            loadQuestions();
+        }
+    }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+        <!-- Test Form -->
+        <form id="test-form" style="display:none;">
+            <div id="questions-container"></div>
+            <button type="button" class="btn" onclick="submitTest()">See My Result</button>
+        </form>
+
+        <!-- Results and Feedback Module -->
+        <div id="results-container">
+            <h2>Your Results</h2>
+            <p class="result-score" id="score-text"></p>
+            <div class="feedback-section">
+                <h3>Improvement Areas</h3>
+                <p id="feedback-intro"></p>
+                <ul id="feedback-list" class="feedback-list"></ul>
+            </div>
+            <button class="btn" onclick="location.reload()">Try Again</button>
+        </div>
+    </div>
+
+<script>
+    // --- B1 QUESTION AND FEEDBACK DATABASE ---
+    const questions = [
+        { question: "To get the promotion, you need to be very ______ and finish all your tasks on time.", options: ["lazy", "efficient", "careless", "talkative"], answer: "efficient", category: "Work & Ambition" },
+        { question: "The ______ from the top of the mountain was absolutely amazing.", options: ["scene", "picture", "view", "landscape"], answer: "view", category: "Travel & Description" },
+        { question: "I was quite ______ with the service; it was much worse than I expected.", options: ["pleased", "excited", "disappointed", "interested"], answer: "disappointed", category: "Opinions & Feelings" },
+        { question: "We should all try to ______ plastic waste to help the environment.", options: ["increase", "produce", "ignore", "reduce"], answer: "reduce", category: "Society & Environment" },
+        { question: "She has a very positive ______ on life, even when things are difficult.", options: ["outlook", "opinion", "feeling", "aspect"], answer: "outlook", category: "Opinions & Feelings" },
+        { question: "It is your ______ to ensure the report is submitted before the deadline.", options: ["opportunity", "responsibility", "development", "choice"], answer: "responsibility", category: "Work & Ambition" },
+        { question: "He found it difficult to ______ to the new work environment.", options: ["accept", "agree", "adopt", "adapt"], answer: "adapt", category: "Verbs & Collocations" },
+        { question: "The government plans to ______ new policies to improve public transport.", options: ["introduce", "invent", "involve", "inform"], answer: "introduce", category: "Society & Environment" },
+        { question: "Even though they are twins, they have very different ______.", options: ["personalities", "appearances", "persons", "characters"], answer: "personalities", category: "People & Personality" },
+        { question: "The company is looking for ______ candidates who can work independently.", options: ["reliable", "dependent", "sociable", "ancient"], answer: "reliable", category: "People & Personality" },
+        { question: "Could you please give me some ______ on how to improve my presentation?", options: ["suggestion", "advice", "opinion", "order"], answer: "advice", category: "Communication" },
+        { question: "I'm sorry, I didn't ______ to interrupt your conversation.", options: ["mean", "think", "want", "plan"], answer: "mean", category: "Communication" },
+        { question: "It's important to set realistic goals that you can ______.", options: ["achieve", "attempt", "affect", "arrive"], answer: "achieve", category: "Work & Ambition" },
+        { question: "The old castle was an ______ building with a lot of history.", options: ["ordinary", "original", "elderly", "ancient"], answer: "ancient", category: "Travel & Description" },
+        { question: "The new software is not ______ with my old computer.", options: ["suitable", "available", "comfortable", "compatible"], answer: "compatible", category: "Technology & Adjectives" },
+        { question: "If you want to ______ a complaint, you should speak to the manager.", options: ["do", "make", "say", "put"], answer: "make", category: "Verbs & Collocations" },
+        { question: "He was feeling ______ about his final exam results.", options: ["nervous", "anxious", "angry", "bored"], answer: "anxious", category: "Opinions & Feelings" },
+        { question: "The story was so ______ that I couldn't stop reading it.", options: ["engaging", "interested", "confusing", "typical"], answer: "engaging", category: "Travel & Description" },
+        { question: "It is ______ that he will win the election, but it's not certain.", options: ["probably", "possibly", "likely", "usually"], answer: "likely", category: "Adverbs & Probability" },
+        { question: "You should ______ eating junk food if you want to be healthier.", options: ["avoid", "stop", "prevent", "finish"], answer: "avoid", category: "Society & Environment" }
+    ];
+
+    const feedbackMap = {
+        "Work & Ambition": "Focus on vocabulary for professional goals and performance (e.g., achieve, efficient, responsibility).",
+        "Travel & Description": "Practice adjectives and nouns used to describe places, experiences, and stories (e.g., view, ancient, engaging).",
+        "Opinions & Feelings": "Learn more nuanced words to express your feelings and perspective (e.g., disappointed, anxious, outlook).",
+        "Society & Environment": "Expand your vocabulary on topics related to community and the planet (e.g., reduce, introduce policy, avoid).",
+        "Verbs & Collocations": "Pay attention to verbs that commonly go with certain nouns (e.g., 'make a complaint', 'adapt to a situation').",
+        "People & Personality": "Learn adjectives and nouns to describe people's character and abilities (e.g., reliable, personalities).",
+        "Communication": "Review phrases and verbs for expressing ideas and intentions (e.g., 'give advice', 'mean to do something').",
+        "Technology & Adjectives": "Study adjectives that describe how technology works and interacts (e.g., compatible).",
+        "Adverbs & Probability": "Practice adverbs that show how certain something is (e.g., likely, probably)."
+    };
+
+    // --- TEST LOGIC (No changes needed here) ---
+
+    function startTest() {
+        const emailInput = document.getElementById('email-input');
+        const emailError = document.getElementById('email-error');
+        if (emailInput.value && emailInput.checkValidity()) {
+            document.getElementById('email-container').style.display = 'none';
+            document.getElementById('test-form').style.display = 'block';
+            loadQuestions();
+        } else {
+            emailError.style.display = 'block';
+        }
+    }
+
+    function loadQuestions() {
+        const questionsContainer = document.getElementById('questions-container');
+        questions.forEach((q, index) => {
+            const questionBlock = document.createElement('div');
+            questionBlock.className = 'question-block';
+            questionBlock.id = `question-${index}`;
+
+            const questionText = document.createElement('p');
+            questionText.className = 'question-text';
+            questionText.innerText = `${index + 1}. ${q.question}`;
+            questionBlock.appendChild(questionText);
+
+            const optionsList = document.createElement('ul');
+            optionsList.className = 'options-list';
+
+            // Shuffle options to make it random
+            const shuffledOptions = [...q.options].sort(() => Math.random() - 0.5);
+
+            shuffledOptions.forEach(option => {
+                const optionItem = document.createElement('li');
+                const radioInput = document.createElement('input');
+                radioInput.type = 'radio';
+                radioInput.name = `question${index}`;
+                radioInput.value = option;
+                radioInput.id = `q${index}_${option.replace(/\s+/g, '-')}`;
+
+                const optionLabel = document.createElement('label');
+                optionLabel.className = 'option-label';
+                optionLabel.htmlFor = radioInput.id;
+                optionLabel.innerText = option;
+
+                optionItem.appendChild(radioInput);
+                optionItem.appendChild(optionLabel);
+                optionsList.appendChild(optionItem);
+            });
+
+            questionBlock.appendChild(optionsList);
+            questionsContainer.appendChild(questionBlock);
+        });
+    }
+    
+    function submitTest() {
+        let score = 0;
+        const incorrectCategories = new Set();
+
+        questions.forEach((q, index) => {
+            const questionBlock = document.getElementById(`question-${index}`);
+            const selectedOption = document.querySelector(`input[name="question${index}"]:checked`);
+            
+            const allOptionsForQuestion = document.querySelectorAll(`input[name="question${index}"]`);
+            allOptionsForQuestion.forEach(input => input.disabled = true);
+
+            const correctAnswerLabel = document.querySelector(`label[for^="q${index}_${q.answer.replace(/\s+/g, '-')}"]`);
+            if (correctAnswerLabel) {
+                correctAnswerLabel.classList.add('correct-answer');
+            }
+
+            if (selectedOption) {
+                if (selectedOption.value === q.answer) {
+                    score++;
+                    questionBlock.classList.add('correct');
+                } else {
+                    incorrectCategories.add(q.category);
+                    questionBlock.classList.add('incorrect');
+                    const wrongAnswerLabel = selectedOption.nextElementSibling;
+                    wrongAnswerLabel.classList.add('wrong-answer');
+                }
+            } else {
+                incorrectCategories.add(q.category);
+                questionBlock.classList.add('incorrect');
+            }
+        });
+        
+        displayResults(score, incorrectCategories);
+    }
+    
+    function displayResults(score, incorrectCategories) {
+        document.getElementById('test-form').style.display = 'none';
+        
+        const resultsContainer = document.getElementById('results-container');
+        resultsContainer.style.display = 'block';
+        document.body.scrollIntoView({ behavior: 'smooth' });
+
+        const scoreText = document.getElementById('score-text');
+        scoreText.innerText = `You Scored ${score} out of ${questions.length}`;
+
+        const feedbackIntro = document.getElementById('feedback-intro');
+        const feedbackList = document.getElementById('feedback-list');
+        feedbackList.innerHTML = '';
+
+        if (score > 17) {
+            feedbackIntro.innerText = "Excellent work! You have a strong B1 vocabulary. Keep practicing with authentic materials like news articles and podcasts to reach B2.";
+        } else if (incorrectCategories.size === 0 && score <= 17) {
+             feedbackIntro.innerText = "Good job! To improve further, try to read more widely on different topics to expand your vocabulary range.";
+        } else {
+            feedbackIntro.innerText = "Good effort! Here are some specific areas to focus on to strengthen your vocabulary:";
+            incorrectCategories.forEach(category => {
+                const listItem = document.createElement('li');
+                listItem.innerText = feedbackMap[category];
+                feedbackList.appendChild(listItem);
+            });
+        }
+    }
+</script>
+
+</body>
+</html>
